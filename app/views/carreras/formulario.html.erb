@@ -1,0 +1,23 @@
+<h1>Registro de educacion</h1>
+<p> <%=	flash[:notice]%></p>
+<form action="<%= carreras_guardar_path %>" method="POST">
+	<%= hidden_field_tag :authenticity_token,
+		form_authenticity_token %>
+	<label>Nombre de carrera:</label>
+	<input type="input" name="nombre_carrera">
+	<br>
+	<label>Usuario</label>
+	<select name="usuario_id">
+		<option value="0">Seleccione usuario</option>
+		<%= options_from_collection_for_select(Usuario.all, :id, :nombre) %>
+	</select>	
+	<br>
+	<input type="submit" name="enviar">	
+
+
+</form>
+
+<ul>
+  <li><%= link_to "consultar educacion", carreras_consultar_path %></li>
+  <li><%= link_to "Home", landingpage_home_path %></li>
+</ul>

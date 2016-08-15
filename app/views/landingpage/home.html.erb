@@ -1,0 +1,10 @@
+<h1>Bienvenido</h1>
+<br>
+<p>Elija una opcion</p>
+<ul>
+<li><%= link_to "Registrar usuario", usuarios_formulario_path %></li>
+<li><%= link_to "consultar usuarios", usuarios_consultar_path(:opcion => "1") %></li>
+<li><%= link_to "Registrar educacion", carreras_formulario_path %></li>
+<li><%= link_to "Consultar educacion", carreras_consultar_path%></li>
+<li><%= link_to "Home", landingpage_home_path %></li>
+</ul>	

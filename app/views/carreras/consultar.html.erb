@@ -1,0 +1,24 @@
+<h1>Lista de Educacion</h1>
+ 
+<table>
+  <tr>
+    <th>Nombre carrera</th>
+    <th>Usuario</th>
+  </tr>
+ 
+<% @carreras.each do |carrera| %>
+  <tr>
+    <td><%= carrera.nombre_carrera %></td>
+    <td><%= carrera.usuario.nombre %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br>
+
+<ul>
+  <li><%= link_to "nueva educacion", carreras_formulario_path %></li>
+  <li><%= link_to "Home", landingpage_home_path %></li>
+</ul>
+ 
+

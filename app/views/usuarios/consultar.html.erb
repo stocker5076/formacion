@@ -1,0 +1,40 @@
+<h1>Lista de Usuarios</h1>
+
+<form action="<%= usuarios_consultar_path %>" method="GET">
+  <%= hidden_field_tag :authenticity_token,
+    form_authenticity_token %>
+  <label>Tipo busqueda:</label>
+  <br>
+  <input type="radio" name="opcion" value="1"> Todos<br>
+  <input type="radio" name="opcion" value="2"> Menores de 18<br>
+  <input type="radio" name="opcion" value="3"> Por nombre <br>
+  <label>Nombre:</label>
+  <input type="input" name="nombre_usuario">
+  <br>
+  <br>  
+  <input type="submit" name="enviar"> 
+</form>
+ 
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Edad</th>
+  </tr>
+ 
+<% @usuarios.each do |usuario| %>
+  <tr>
+    <td><%= usuario.nombre %></td>
+    <td><%= usuario.correo %></td>
+    <td><%= usuario.edad %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br>
+
+<ul>
+  <li><%= link_to "nuevo usuario", usuarios_formulario_path %></li>
+  <li><%= link_to "Home", landingpage_home_path %></li>
+</ul>
+ 

@@ -1,0 +1,22 @@
+<h1>Registro de usuarios</h1>
+<p> <%=	flash[:notice]%></p>
+<form action="<%= usuarios_guardar_path %>" method="POST">
+	<%= hidden_field_tag :authenticity_token,
+		form_authenticity_token %>
+	<label>Nombre:</label>
+	<input type="input" name="nombre">
+	<br>
+	<label> Edad:</label>
+	<input type="input" name="edad">
+	<br>
+	<label>Email:</label>
+	<input type="input" name="email">
+	<br>	
+	<input type="submit" name="enviar">	
+</form>
+<br>
+
+<ul>
+	<li><%= link_to "consultar usuarios", usuarios_consultar_path(:opcion => "1") %></li>
+	<li><%= link_to "Home", landingpage_home_path %></li>
+</ul>
